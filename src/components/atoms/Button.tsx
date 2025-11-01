@@ -13,12 +13,15 @@ export default function Button({
   variant = "primary",
   ...props
 }: Props) {
-  const styles = {
-    primary: "bg-brand text-white hover:bg-blue-600",
-    ghost:
-      "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200",
-    danger: "bg-red-600 text-white hover:bg-red-700",
-  }[variant];
+  const styles =
+    {
+      primary:
+        "bg-white text-black border border-slate-300 hover:bg-slate-100",
+      ghost:
+        "bg-white text-black border border-slate-300 hover:bg-slate-100",
+      danger:
+        "bg-white text-black border border-red-400 hover:bg-red-50",
+    }[variant] || "";
 
   return (
     <motion.button

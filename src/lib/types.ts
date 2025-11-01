@@ -1,10 +1,10 @@
 export type LastMeasurement = {
-  createdAt: string; 
+  createdAt: string; // ISO
   value: string;
 };
 
 export type Sensor = {
-  _id: string; 
+  _id: string; // backend returns string ids
   title: string;
   unit: string;
   sensorType: string;
@@ -29,4 +29,10 @@ export type ApiResponse<T> = {
   message: string;
   data: T;
   page?: PageMeta;
+};
+
+export type DeleteResponse = {
+  code: number;
+  id: number | string;
+  message: string;
 };

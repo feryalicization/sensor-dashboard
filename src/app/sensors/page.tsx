@@ -85,16 +85,17 @@ export default function SensorsPage() {
         </div>
 
         {/* Pagination controls */}
-        <div className="flex items-center gap-2 text-black">
+        <div className="flex items-center gap-2 text-white">
           <Button
             variant="ghost"
             disabled={!canGoPrev || isFetching}
             onClick={() => setPage((p) => Math.max(1, p - 1))}
-            className="text-black"
+            className="text-black border-gray-300 hover:bg-gray-200 hover:text-black"
           >
             Prev
           </Button>
-          <span className="text-sm text-black">
+
+          <span className="text-sm text-white font-medium">
             Page {page}
             {totalPages ? ` / ${totalPages}` : null}
             {isFetching ? " · updating…" : null}
@@ -103,11 +104,12 @@ export default function SensorsPage() {
             variant="ghost"
             disabled={!canGoNext || isFetching}
             onClick={() => setPage((p) => p + 1)}
-            className="text-black"
+            className="text-black border-gray-300 hover:bg-gray-200 hover:text-black"
           >
             Next
           </Button>
         </div>
+
       </div>
 
       {/* Content states */}
